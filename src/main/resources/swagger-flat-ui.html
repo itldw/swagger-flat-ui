@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<title id="swagger-flat-title">后端接口文档</title>
+<link rel="stylesheet" href="./webjars/css/layui.css">
+<script type="text/javascript" src="./webjars/jquery.js"></script>
+<script type="text/javascript" src="./webjars/flatui.js"></script>
+<script type="text/javascript" src="./webjars/template.js"></script>
+</head>
+<body class="layui-layout-body">
+	<div class="layui-layout layui-layout-admin">
+		<div class="layui-header">
+			<div id="swagger-flat-desption" class="layui-logo"></div>
+			<!-- 头部区域（可配合layui已有的水平导航） -->
+			<ul class="layui-nav layui-layout-right">
+				<li class="layui-nav-item"><a href="">控制台</a></li>
+				<li class="layui-nav-item"><a href="">商品管理</a></li>
+				<li class="layui-nav-item"><a href="">用户</a></li>
+				<li class="layui-nav-item"><a href="javascript:;">其它系统</a>
+					<dl class="layui-nav-child">
+						<dd>
+							<a href="">订单服务</a>
+						</dd>
+						<dd>
+							<a href="">入库服务</a>
+						</dd>
+						<dd>
+							<a href="">数据中心</a>
+						</dd>
+					</dl></li>
+			</ul>
+
+		</div>
+
+		<div class="layui-side layui-bg-black">
+			<div class="layui-side-scroll">
+				<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+				<ul  id="swagger-flat-tree" class="layui-nav layui-nav-tree" lay-filter="test">
+					<li class="layui-nav-item layui-nav-itemed"><a class=""
+						href="javascript:;">所有商品</a>
+						<dl id="" class="layui-nav-child">
+							<dd>
+								<a href="javascript:;">列表一</a>
+							</dd>
+							<dd>
+								<a href="javascript:;">列表二</a>
+							</dd>
+							<dd>
+								<a href="javascript:;">列表三</a>
+							</dd>
+							<dd>
+								<a href="">超链接</a>
+							</dd>
+						</dl></li>
+					<li class="layui-nav-item"><a href="javascript:;">解决方案</a>
+						<dl class="layui-nav-child">
+							<dd>
+								<a href="javascript:;">列表一</a>
+							</dd>
+							<dd>
+								<a href="javascript:;">列表二</a>
+							</dd>
+							<dd>
+								<a href="">超链接</a>
+							</dd>
+						</dl></li>
+					<li class="layui-nav-item"><a href="">云市场</a></li>
+					<li class="layui-nav-item"><a href="">发布商品</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="layui-body">
+			<!-- 内容主体区域 -->
+			<div style="padding: 15px;">
+
+				<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+					<ul class="layui-tab-title">
+						<li class="layui-this">接口描述</li>
+						<li>接口调试</li>
+						<li>修改记录</li>
+						<li>业务需求</li>
+
+					</ul>
+					<div class="layui-tab-content"></div>
+				</div>
+
+			</div>
+		</div>
+
+		<div style="text-algin: center;" class="layui-footer">
+			swagger-flat-ui v1.0</div>
+	</div>
+	<script src="./webjars/layui.js"></script>
+	<script>
+		//JavaScript代码区域
+		layui.use('element', function() {
+			var element = layui.element;
+
+		});
+	</script>
+</body>
+<script type="text/html" id="swagger-flat-template-tags">
+ {{each list as value i}}
+    <li tag="{{value.name}}" class="layui-nav-item layui-nav-itemed">
+      <a class="" href="javascript:;">{{value.description}}</a>
+	</li>
+ {{/each}}
+
+</script>
+
+<script type="text/html" id="swagger-flat-template-paths">
+ {{each list as value i}}
+    <dd>
+		<a href="javascript:;">{{value.[0].summary}}</a>
+	</dd>
+ {{/each}}
+
+</script>
+</html>
